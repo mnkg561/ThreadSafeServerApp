@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd" version="5">
+  <description>ThreadSafeServerApp description</description>
+  <display-name>ThreadSafeServerApp name</display-name>
+  <module>
+    <web>
+      <web-uri>ThreadSafeServerApp-war-0.0.1-SNAPSHOT.war</web-uri>
+      <context-root>/ThreadSafeServerApp</context-root>
+    </web>
+  </module>
+</application>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2.11/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- Appenders -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="debug" />
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p [%c{1}] %m%n" />
+		</layout>
+		<!-- <filter class="org.apache.log4j.varia.LevelRangeFilter"> <param name="LevelMin" 
+			value="debug" /> <param name="LevelMax" value="info" /> </filter> -->
+	</appender>
+
+	<appender name="stderr" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="warn" />
+		<param name="Target" value="System.err" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p [%c{1}] %m%n" />
+		</layout>
+	</appender>
+
+
+	<!-- Third-party loggers -->
+	<logger name="org.springframework.web">
+		<level value="info" />
+	</logger>
+	<logger name="log4j.logger.httpclient.wire">
+		<level value="info" />
+	</logger>
+
+	<!-- Root logger -->
+	<root>
+		<priority value="info" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="stderr" />
+	</root>
+</log4j:configuration>

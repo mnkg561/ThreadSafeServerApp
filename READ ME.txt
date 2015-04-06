@@ -1,0 +1,30 @@
+1. Project created using Maven.
+2. Used Spring 3.1 framework
+3. There are 2 folders inside project root folder.
+	a. ThreadSafeServerApp-ear folder [This folder is to create a ear file] Dependecy for this ear creation is ThreadSafeServerApp.war file
+	b. ThreadSafeServerApp-war folder .. packaging=> war
+		Folders inside are 
+		1. /src/main/java -- for all .java class files
+		2. /src/main/resources -- for log4j.xml file for slf4j logging and MyFile.txt file to load all random strings created by Producer App
+		3. /src/main/webapp -- 
+				WEB-INF/web.xml is for web.xml,
+				WEB-INF/config/webmvc.xml for spring dispatcher servlet
+				WEB-INF/views/index.jsp -- index.jsp acting as front end to this application
+				resources folder -- js/styles/images
+
+
+
+4. There are totally 4 classes in the project
+
+	a. QueueData -- available in com.naveen.mobileiron_test.threadsafeserverapp.web.beans package
+	 	Its a bean class created to send/receive queue data between client/consumer.
+	b. ConsumerController -- available in com.naveen.mobileiron_test.threadsafeserverapp.web.controller package
+		It's a controller class and created to serve requests from clients.
+			i. /printHeader is to retrieve head of the queue with out removing any data from queue.
+			ii. /retrieveData is to retrieve head of the queue.
+			iii. /topFive is to get first 5 elements of queue (Created just for displaying first five elements of the queue on the screebn)
+			iv. /index is created to redirect to index.jsp page which acts as front end to this application
+	c. RetrieveDataDAOImpl -- available in com.naveen.mobileiron_test.threadsafeserverapp.web.daoImpl package
+		It's a service class created to initialize queue and all thread safe methods (retrieve, print, topFive elements) are created in this class.
+	d. ProducerUtility -- available in com.naveen.mobileiron_test.threadsafeserverapp.web.utilities package
+		Its a utility component created to generated random strings at random intervals and place it in queue
