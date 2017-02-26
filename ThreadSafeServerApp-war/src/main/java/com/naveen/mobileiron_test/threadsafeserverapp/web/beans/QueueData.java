@@ -11,8 +11,16 @@ public class QueueData {
     private String thirdElement;
     private String fourthElement;
     private String fifthElement;
+    private String testGit;
     
-    public int getSize() {
+    
+    public String getTestGit() {
+		return testGit;
+	}
+	public void setTestGit(String testGit) {
+		this.testGit = testGit;
+	}
+	public int getSize() {
         return size;
     }
     public void setSize(int size) {
